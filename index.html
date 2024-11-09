@@ -40,17 +40,26 @@ Pseudocode:
 // create a function named getComputerChoice
 
 function getComputerChoice(choice) {
-    return choice;
+    let randomNum = Math.floor(Math.random() * 3)
+    if (randomNum === 0) {
+        return choice = "rock";
+    }
+    else if (randomNum === 1) {
+        return choice = "paper";
+    }
+    else {
+    return choice = "scissors";
+    }
 }
 
-/* make computer randomize between in code between 0 1 2. */
+/* make computer randomize between in code between 0 1 2. 
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
     console.log(getRandomInt(3));
 }
-
-/* if statement to tell which number belongs to which string */
+*/
+/* if statement to tell which number belongs to which string 
 
 if (getRandomInt() === 0) {
     getComputerChoice = "Rock";
