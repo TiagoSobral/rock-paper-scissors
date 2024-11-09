@@ -43,11 +43,24 @@ function getComputerChoice(choice) {
     return choice;
 }
 
-/* make computer randomize between rock, paper, scissors in code between 0 1 2.
-0 will be rock
-1 will be paper
-2 will be scissors
-*/
+/* make computer randomize between in code between 0 1 2. */
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+    console.log(getRandomInt(3));
+}
+
+/* if statement to tell which number belongs to which string */
+
+if (getRandomInt() === 0) {
+    getComputerChoice = "Rock";
+}
+else if (getRandomInt() === 1) {
+    getComputerChoice = "Paper";
+}
+else {
+    getComputerChoice = "Scissors";
+}
 
 /* create if statement to see who wins:
 if (userChoice === rock) {
