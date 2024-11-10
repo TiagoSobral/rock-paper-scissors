@@ -1,22 +1,5 @@
 console.log("Hello World!");
 
-// create a function named getComputerChoice
-
-function getComputerChoice(choice) {
-    let randomNum = Math.floor(Math.random() * 3)
-    if (randomNum === 0) {
-        return choice = "rock";
-    }
-    else if (randomNum === 1) {
-        return choice = "paper";
-    }
-    else {
-    return choice = "scissors";
-    }
-}
-
-console.log(getComputerChoice());
-
 /* 
 Planing:
 - the program has no interface
@@ -43,6 +26,25 @@ Pseudocode:
 - if the user chooses the same as the computer print (its a tie! try again!)
 - else print (user looses! Play again!)
 */
+
+
+// create a function named getComputerChoice
+
+function getComputerChoice(choice) {
+    let randomNum = Math.floor(Math.random() * 3)
+    if (randomNum === 0) {
+        return choice = "rock";
+    }
+    else if (randomNum === 1) {
+        return choice = "paper";
+    }
+    else {
+    return choice = "scissors";
+    }
+}
+
+console.log(getComputerChoice());
+
 
 /* make computer randomize between in code between 0 1 2. 
 
