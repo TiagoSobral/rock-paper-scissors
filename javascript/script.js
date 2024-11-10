@@ -69,8 +69,6 @@ let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 if (getHumanChoice === "rock" && getComputerChoice === "rock" 
 ||  getHumanChoice === "paper" && getComputerChoice === "paper"
 ||  getHumanChoice === "scissors" && getComputerChoice === "scissors") {
-    humanScore += 1;
-    computerScore += 1;
     console.log(`It's a tie! ${scoreTracker}`);
 }
 
@@ -79,14 +77,12 @@ if (getHumanChoice === "rock" && getComputerChoice === "rock"
 else if (getHumanChoice === "rock" && getComputerChoice === "paper"
 ||      getHumanChoice === "paper" && getComputerChoice === "scissors"
 ||      getHumanChoice === "scissors" && getComputerChoice === "rock") {
-    computerScore += 1;
     console.log(`Computer Wins! ${scoreTracker}`);
 }
 
 /* using if when user wins every time, to organize code, using && and || */
 
 else {
-    humanScore += 1;
     console.log(`Computer Wins! ${scoreTracker}`)
 }
 
