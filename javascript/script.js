@@ -28,7 +28,9 @@ Pseudocode:
 */
 
 
-// create a function named getComputerChoice
+/*create a function named getComputerChoice 
+(used a numer to attach to a specific string in order to return the string
+when computer randomizes the number that outputs.*/
 
 function getComputerChoice(choice) {
     let randomNum = Math.floor(Math.random() * 3)
@@ -43,32 +45,8 @@ function getComputerChoice(choice) {
     }
 }
 
-
-/* make computer randomize between in code between 0 1 2. 
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-    console.log(getRandomInt(3));
-}
-*/
-
-/* if statement to tell which number belongs to which string 
-
-if (getRandomInt() === 0) {
-    getComputerChoice = "Rock";
-}
-else if (getRandomInt() === 1) {
-    getComputerChoice = "Paper";
-}
-else {
-    getComputerChoice = "Scissors";
-}
-
-/* get human choice function: /*
-
-
-
-/* prompt method to receive (rock, paper, scissors) */
+/* get human choice function: (used lower case function
+to receive any type of input from user.) */
 
 let gameQuestion = prompt("Rock, Paper, Scissors: ");
 
@@ -78,6 +56,23 @@ function getHumanChoice(answer) {
 
 console.log(getHumanChoice());
 console.log(getComputerChoice());
+
+/* create 2 new variable names humanScore & computerScore
+in the global scope */
+
+let humanScore = 0;
+let computerScore = 0;
+let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
+
+/* keep track of scores */
+
+if (getHumanChoice === "rock" && getComputerChoice === "rock") {
+    humanScore += 1;
+    computerScore += 1;
+    print(`It's a tie! ${scoreTracker}`);
+}
+else if (getHumanChoice === "rock" && getComputerChoice === "rock"
+
 
 /* create if statement to see who wins:
 if (userChoice === rock) {
