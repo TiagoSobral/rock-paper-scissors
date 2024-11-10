@@ -64,14 +64,29 @@ let humanScore = 0;
 let computerScore = 0;
 let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 
-/* keep track of scores */
+/* using if when user ties time, to organize code, using && and || */
 
-if (getHumanChoice === "rock" && getComputerChoice === "rock") {
+if (getHumanChoice === "rock" && getComputerChoice === "rock" 
+||  getHumanChoice === "paper" && getComputerChoice === "paper"
+||  getHumanChoice === "scissors" && getComputerChoice === "scissors") {
     humanScore += 1;
     computerScore += 1;
     print(`It's a tie! ${scoreTracker}`);
 }
-else if (getHumanChoice === "rock" && getComputerChoice === "rock"
+
+/* using if when user loses every time, to organize code, using && and || */
+
+else if (getHumanChoice === "rock" && getComputerChoice === "paper") {
+    humanScore += 1;
+    computerScore += 1;
+    print(`Computer Wins! ${scoreTracker}`);
+}
+
+/* using if when user wins every time, to organize code, using && and || */
+
+else {
+    
+}
 
 
 /* create if statement to see who wins:
