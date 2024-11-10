@@ -71,7 +71,7 @@ if (getHumanChoice === "rock" && getComputerChoice === "rock"
 ||  getHumanChoice === "scissors" && getComputerChoice === "scissors") {
     humanScore += 1;
     computerScore += 1;
-    print(`It's a tie! ${scoreTracker}`);
+    console.log(`It's a tie! ${scoreTracker}`);
 }
 
 /* using if when user loses every time, to organize code, using && and || */
@@ -80,14 +80,14 @@ else if (getHumanChoice === "rock" && getComputerChoice === "paper"
 ||      getHumanChoice === "paper" && getComputerChoice === "scissors"
 ||      getHumanChoice === "scissors" && getComputerChoice === "rock") {
     computerScore += 1;
-    print(`Computer Wins! ${scoreTracker}`);
+    console.log(`Computer Wins! ${scoreTracker}`);
 }
 
 /* using if when user wins every time, to organize code, using && and || */
 
 else {
     humanScore += 1;
-    print(`Computer Wins! ${scoreTracker}`)
+    console.log(`Computer Wins! ${scoreTracker}`)
 }
 
 
