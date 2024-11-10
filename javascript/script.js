@@ -43,8 +43,6 @@ function getComputerChoice(choice) {
     }
 }
 
-console.log(getComputerChoice());
-
 
 /* make computer randomize between in code between 0 1 2. 
 
@@ -53,6 +51,7 @@ function getRandomInt(max) {
     console.log(getRandomInt(3));
 }
 */
+
 /* if statement to tell which number belongs to which string 
 
 if (getRandomInt() === 0) {
@@ -64,6 +63,21 @@ else if (getRandomInt() === 1) {
 else {
     getComputerChoice = "Scissors";
 }
+
+/* get human choice function: /*
+
+
+
+/* prompt method to receive (rock, paper, scissors) */
+
+let gameQuestion = prompt("Rock, Paper, Scissors: ");
+
+function getHumanChoice(answer) {
+    return answer = gameQuestion.toLocaleLowerCase();
+}
+
+console.log(getHumanChoice());
+console.log(getComputerChoice());
 
 /* create if statement to see who wins:
 if (userChoice === rock) {
