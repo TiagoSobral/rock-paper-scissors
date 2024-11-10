@@ -1,4 +1,4 @@
-console.log("Hello World!");
+
 
 /* 
 Planing:
@@ -33,13 +33,13 @@ Pseudocode:
 function getComputerChoice(choice) {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        return choice = "rock";
+        return choice = "Computer Chooses: rock!";
     }
     else if (randomNum === 1) {
-        return choice = "paper";
+        return choice = "Computer Chooses: paper!";
     }
     else {
-    return choice = "scissors";
+    return choice = "Computer Chooses: scissors!";
     }
 }
 
@@ -73,7 +73,7 @@ else {
 let gameQuestion = prompt("Rock, Paper, Scissors: ");
 
 function getHumanChoice(answer) {
-    return answer = gameQuestion.toLocaleLowerCase();
+    return answer = `User Chooses: ${gameQuestion.toLocaleLowerCase()}!`;
 }
 
 console.log(getHumanChoice());
