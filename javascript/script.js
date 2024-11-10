@@ -76,8 +76,9 @@ if (getHumanChoice === "rock" && getComputerChoice === "rock"
 
 /* using if when user loses every time, to organize code, using && and || */
 
-else if (getHumanChoice === "rock" && getComputerChoice === "paper") {
-    humanScore += 1;
+else if (getHumanChoice === "rock" && getComputerChoice === "paper"
+||      getHumanChoice === "paper" && getComputerChoice === "scissors"
+||      getHumanChoice === "scissors" && getComputerChoice === "rock") {
     computerScore += 1;
     print(`Computer Wins! ${scoreTracker}`);
 }
@@ -85,7 +86,8 @@ else if (getHumanChoice === "rock" && getComputerChoice === "paper") {
 /* using if when user wins every time, to organize code, using && and || */
 
 else {
-    
+    humanScore += 1;
+    print(`Computer Wins! ${scoreTracker}`)
 }
 
 
