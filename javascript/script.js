@@ -28,6 +28,7 @@ Pseudocode:
 */
 
 
+
 /*create a function named getComputerChoice 
 (used a numer to attach to a specific string in order to return the string
 when computer randomizes the number that outputs.*/
@@ -66,25 +67,9 @@ let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 
 /* using if when user ties time, to organize code, using && and || */
 
-if (getHumanChoice === "rock" && getComputerChoice === "rock" 
-||  getHumanChoice === "paper" && getComputerChoice === "paper"
-||  getHumanChoice === "scissors" && getComputerChoice === "scissors") {
-    console.log(`It's a tie! ${scoreTracker}`);
-}
-
 /* using if when user loses every time, to organize code, using && and || */
 
-else if (getHumanChoice === "rock" && getComputerChoice === "paper"
-||      getHumanChoice === "paper" && getComputerChoice === "scissors"
-||      getHumanChoice === "scissors" && getComputerChoice === "rock") {
-    console.log(`Computer Wins! ${scoreTracker}`);
-}
-
 /* using if when user wins every time, to organize code, using && and || */
-
-else {
-    console.log(`Computer Wins! ${scoreTracker}`)
-}
 
 
 /* create if statement to see who wins:
