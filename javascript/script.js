@@ -36,13 +36,13 @@ when computer randomizes the number that outputs.*/
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        console.log("Computer Chooses: rock!");
+        return "rock!";
     }
     else if (randomNum === 1) {
-        console.log("Computer Chooses: paper!");
+        return "paper!";
     }
     else {
-        console.log("Computer Chooses: scissors!");
+        return "scissors!";
     }
 }
 
@@ -56,7 +56,7 @@ function getHumanChoice() {
         getHumanChoice();
     }
     else {
-        console.log(`User Chooses: ${userAnswer.toLowerCase()}!`);
+       return userAnswer.toLowerCase();
     }
 }
 
@@ -72,6 +72,8 @@ let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 /* create a new function named playRound */
 
 function playRound(humanChoice, computerChoice) {
+        console.log(`User Chooses: ${humanChoice}!`);
+        console.log(`Computer Chooses: ${computerChoice}`);
 
 }
 
