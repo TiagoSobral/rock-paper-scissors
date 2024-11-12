@@ -36,13 +36,13 @@ when computer randomizes the number that outputs.*/
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        return "Computer Chooses: rock!";
+        console.log("Computer Chooses: rock!");
     }
     else if (randomNum === 1) {
-        return "Computer Chooses: paper!";
+        console.log("Computer Chooses: paper!");
     }
     else {
-        return "Computer Chooses: scissors!";
+        console.log("Computer Chooses: scissors!");
     }
 }
 
