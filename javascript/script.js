@@ -66,7 +66,6 @@ in the global scope */
 
 let humanScore = 0;
 let computerScore = 0;
-let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 
 
 /* create a new function named playRound */
@@ -78,15 +77,22 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "rock" 
     || humanChoice === "paper" && computerChoice === "paper" 
     || humanChoice === "scissors" && computerChoice === "scissors") {
-        console.log("It's a tie!");  
+        console.log("It's a tie!");
+        humanScore++;
+        computerScore++;
+        console.log(scoreTracker);  
     }
     else if (humanChoice === "rock" && computerChoice === "scissors" 
     || humanChoice === "paper" && computerChoice === "rock" 
     || humanChoice === "scissors" && computerChoice === "paper"){
         console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+        humanScore++;
+        console.log(scoreTracker);
     }
     else {
         console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
+        computerScore++;
+        console.log(scoreTracker);
     }
 }      
 
