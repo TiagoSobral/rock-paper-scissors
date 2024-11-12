@@ -36,13 +36,13 @@ when computer randomizes the number that outputs.*/
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        return "rock";
+        return "ROCK";
     }
     else if (randomNum === 1) {
-        return "paper";
+        return "PAPER";
     }
     else {
-        return "scissors";
+        return "SCISSORS";
     }
 }
 
@@ -56,7 +56,7 @@ function getHumanChoice() {
         getHumanChoice();
     }
     else {
-       return userAnswer.toLowerCase();
+       return userAnswer.toUpperCase();
     }
 }
 
