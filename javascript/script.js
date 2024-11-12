@@ -80,19 +80,19 @@ function playRound(humanChoice, computerChoice) {
         console.log("It's a tie!");
         humanScore++;
         computerScore++;
-        console.log(scoreTracker);  
+        //console.log(scoreTracker);  
     }
     else if (humanChoice === "rock" && computerChoice === "scissors" 
     || humanChoice === "paper" && computerChoice === "rock" 
     || humanChoice === "scissors" && computerChoice === "paper"){
         console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++;
-        console.log(scoreTracker);
+        //console.log(scoreTracker);
     }
     else {
         console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
-        console.log(scoreTracker);
+        //console.log(scoreTracker);
     }
 }      
 
@@ -101,6 +101,8 @@ let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 
 playRound(humanSelection,computerSelection);
+
+console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
 /* Pseudocode for step 5:
 - play round by round (play 1 round!)
