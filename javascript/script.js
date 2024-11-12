@@ -49,20 +49,17 @@ function getComputerChoice() {
 /* get human choice function: (used lower case function
 to receive any type of input from user.) */
 
-
 function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
     if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
         alert("Unknown Command! Try Again");
-        return getHumanChoice();
+        getHumanChoice();
     }
     else {
-    return `User Chooses: ${userAnswer.toLowerCase()}!`;
+        console.log(`User Chooses: ${userAnswer.toLowerCase()}!`);
     }
 }
 
-console.log(getHumanChoice());
-console.log(getComputerChoice());
 
 /* create 2 new variable names humanScore & computerScore
 in the global scope */
@@ -75,10 +72,10 @@ let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 /* create a new function named playRound */
 
 function playRound(humanChoice, computerChoice) {
-    
+
 }
 
-let humanSelection = getHumanChoice().toLowerCase();
+let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 
 playRound(humanSelection,computerSelection);
