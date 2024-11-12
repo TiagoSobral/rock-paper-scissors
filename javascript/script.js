@@ -57,7 +57,7 @@ function getHumanChoice() {
         return getHumanChoice();
     }
     else {
-    return `User Chooses: ${userAnswer.toLocaleLowerCase()}!`;
+    return `User Chooses: ${userAnswer.toLowerCase()}!`;
     }
 }
 
@@ -75,38 +75,20 @@ let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 /* create a new function named playRound */
 
 function playRound(humanChoice, computerChoice) {
-
+    
 }
 
+let humanSelection = getHumanChoice().toLowerCase();
+let computerSelection = getComputerChoice();
 
-/* using if when user ties time, to organize code, using && and || */
+playRound(humanSelection,computerSelection);
 
-/* using if when user loses every time, to organize code, using && and || */
-
-/* using if when user wins every time, to organize code, using && and || */
-
-
-/* create if statement to see who wins:
-if (userChoice === rock) {
-    if computerChoice === scissors;
-        print("Computer Looses!")
-    else if computerChoice === rock;
-        print ("Its a tie! Try Again!")
-    else print ("You Loose! Try Again!")
-}
-else if (userChoice === scissors) {
-    if computerChoice === paper;
-        print("Computer Looses!")
-    else if computerChoice === scissors;
-        print ("Its a tie! Try Again!")
-    else print ("You Loose! Try Again!")
-}
-else {
-    if computerChoice === rock;
-        print("Computer Looses!")
-    else if computerChoice === paper;
-        print ("Its a tie! Try Again!")
-    else print ("You Loose! Try Again!")
-} 
-
+/* Pseudocode for step 5:
+- play round by round (play 1 round!)
+- player choice
+- computer choice
+- if player choice wins increment score
+- if computer choice wins increment score
 */
+
+
