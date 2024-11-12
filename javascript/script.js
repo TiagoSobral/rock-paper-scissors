@@ -36,13 +36,13 @@ when computer randomizes the number that outputs.*/
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        return "rock!";
+        return "rock";
     }
     else if (randomNum === 1) {
-        return "paper!";
+        return "paper";
     }
     else {
-        return "scissors!";
+        return "scissors";
     }
 }
 
@@ -72,10 +72,24 @@ let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
 /* create a new function named playRound */
 
 function playRound(humanChoice, computerChoice) {
-        console.log(`User Chooses: ${humanChoice}!`);
-        console.log(`Computer Chooses: ${computerChoice}`);
+    console.log(`User Chooses: ${humanChoice}!`);
+    console.log(`Computer Chooses: ${computerChoice}!`);
+        
+    if (humanChoice === "rock" && computerChoice === "rock" 
+    || humanChoice === "paper" && computerChoice === "paper" 
+    || humanChoice === "scissors" && computerChoice === "scissors") {
+        console.log("It's a tie!");  
+    }
+    else if (humanChoice === "rock" && computerChoice === "scissors" 
+    || humanChoice === "paper" && computerChoice === "rock" 
+    || humanChoice === "scissors" && computerChoice === "paper"){
+        console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+    }
+    else {
+        console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
+    }
+}      
 
-}
 
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
@@ -89,5 +103,3 @@ playRound(humanSelection,computerSelection);
 - if player choice wins increment score
 - if computer choice wins increment score
 */
-
-
