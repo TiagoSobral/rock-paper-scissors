@@ -33,26 +33,32 @@ Pseudocode:
 (used a numer to attach to a specific string in order to return the string
 when computer randomizes the number that outputs.*/
 
-function getComputerChoice(choice) {
+function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        return choice = "Computer Chooses: rock!";
+        return "Computer Chooses: rock!";
     }
     else if (randomNum === 1) {
-        return choice = "Computer Chooses: paper!";
+        return "Computer Chooses: paper!";
     }
     else {
-    return choice = "Computer Chooses: scissors!";
+        return "Computer Chooses: scissors!";
     }
 }
 
 /* get human choice function: (used lower case function
 to receive any type of input from user.) */
 
-let gameQuestion = prompt("Rock, Paper, Scissors: ");
 
-function getHumanChoice(answer) {
-    return answer = `User Chooses: ${gameQuestion.toLocaleLowerCase()}!`;
+function getHumanChoice() {
+    let userAnswer = prompt("Rock, Paper, Scissors: ");
+    if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
+        alert("Unknown Command! Try Again");
+        return getHumanChoice();
+    }
+    else {
+    return `User Chooses: ${userAnswer.toLocaleLowerCase()}!`;
+    }
 }
 
 console.log(getHumanChoice());
@@ -64,6 +70,14 @@ in the global scope */
 let humanScore = 0;
 let computerScore = 0;
 let scoreTracker = `Score: Human ${humanScore} - ${computerScore} Computer`;
+
+
+/* create a new function named playRound */
+
+function playRound(humanChoice, computerChoice) {
+
+}
+
 
 /* using if when user ties time, to organize code, using && and || */
 
