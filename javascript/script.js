@@ -54,6 +54,7 @@ function getHumanChoice() {
     if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
         alert("Unknown Command! Try Again");
         getHumanChoice();
+    // here the function will return to the initial stage if user doesn't answer properly.
     }
     else {
        return userAnswer.toLowerCase();
@@ -97,18 +98,30 @@ function playRound(humanChoice, computerChoice) {
     }
 }      
 
+// variables that work as arguments in PlayRound Function
 
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 
+
+// Calling Function
 playRound(humanSelection,computerSelection);
 
+// Score message with increment in it
 console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
+
+/* create playGame */
+
+function playGame() {
+    
+}
+
+
+
+
 /* Pseudocode for step 5:
-- play round by round (play 1 round!)
-- player choice
-- computer choice
-- if player choice wins increment score
-- if computer choice wins increment score
-*/
+- playGame function calls playRound 
+- play 5 times
+- keep track of score
+- declares winner at the end
