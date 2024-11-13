@@ -133,8 +133,7 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "paper" && computerChoice === "paper" 
     || humanChoice === "scissors" && computerChoice === "scissors") {
         console.log("It's a tie!");
-        humanScore++;
-        computerScore++;  
+        return humanScore++ && computerScore++; 
     }
     
     //when user wins
@@ -142,12 +141,12 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "paper" && computerChoice === "rock" 
     || humanChoice === "scissors" && computerChoice === "paper"){
         console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
-        humanScore++;
+        return humanScore++;
     }
     //when computer wins
     else {
         console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
-        computerScore++;
+        return computerScore++;
     }
 }      
 
@@ -166,11 +165,16 @@ console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
 }
 
+let i = playGame();
 
+for (let i = 0; i < 4 ; i++) {
+    playGame();
 
+}
 
 /* Pseudocode for step 5:
 - playGame function calls playRound 
 - play 5 times
 - keep track of score
-- declares winner at the end
+- declares winner at the end */
+
