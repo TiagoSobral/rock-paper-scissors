@@ -69,6 +69,59 @@ let humanScore = 0;
 let computerScore = 0;
 
 
+/* create a new function named playRound
+
+function playRound(humanChoice, computerChoice) {
+    console.log(`User Chooses: ${humanChoice}!`);
+    console.log(`Computer Chooses: ${computerChoice}!`);
+    
+    //when it's tie
+    if (humanChoice === "rock" && computerChoice === "rock" 
+    || humanChoice === "paper" && computerChoice === "paper" 
+    || humanChoice === "scissors" && computerChoice === "scissors") {
+        console.log("It's a tie!");
+        humanScore++;
+        computerScore++;  
+    }
+    
+    //when user wins
+    else if (humanChoice === "rock" && computerChoice === "scissors" 
+    || humanChoice === "paper" && computerChoice === "rock" 
+    || humanChoice === "scissors" && computerChoice === "paper"){
+        console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+        humanScore++;
+    }
+    //when computer wins
+    else {
+        console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
+        computerScore++;
+    }
+}      
+
+// variables that work as arguments in PlayRound Function
+
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+
+
+// Calling Function
+playRound(humanSelection,computerSelection);
+
+// Score message with increment in it
+console.log(`Score: User ${humanScore} - ${computerScore} Computer`); */
+
+
+/* create playGame */
+
+function playGame() {
+
+    /* create 2 new variable names humanScore & computerScore
+in the global scope */
+
+let humanScore = 0;
+let computerScore = 0;
+
+
 /* create a new function named playRound */
 
 function playRound(humanChoice, computerChoice) {
@@ -111,10 +164,6 @@ playRound(humanSelection,computerSelection);
 console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
 
-/* create playGame */
-
-function playGame() {
-    
 }
 
 
