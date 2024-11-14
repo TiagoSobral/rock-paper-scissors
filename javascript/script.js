@@ -36,13 +36,13 @@ when computer randomizes the number that outputs.*/
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        return "rock";
+        console.log("rock");
     }
     else if (randomNum === 1) {
-        return "paper";
+        console.log("paper");
     }
     else {
-        return "scissors";
+        console.log("scissors");
     }
 }
 
@@ -57,61 +57,9 @@ function getHumanChoice() {
     // here the function will return to the initial stage if user doesn't answer properly.
     }
     else {
-       return userAnswer.toLowerCase();
+       console.log(userAnswer.toLowerCase());
     }
 }
-
-
-/* create 2 new variable names humanScore & computerScore
-in the global scope */
-
-let humanScore = 0;
-let computerScore = 0;
-
-
-/* create a new function named playRound
-
-function playRound(humanChoice, computerChoice) {
-    console.log(`User Chooses: ${humanChoice}!`);
-    console.log(`Computer Chooses: ${computerChoice}!`);
-    
-    //when it's tie
-    if (humanChoice === "rock" && computerChoice === "rock" 
-    || humanChoice === "paper" && computerChoice === "paper" 
-    || humanChoice === "scissors" && computerChoice === "scissors") {
-        console.log("It's a tie!");
-        humanScore++;
-        computerScore++;  
-    }
-    
-    //when user wins
-    else if (humanChoice === "rock" && computerChoice === "scissors" 
-    || humanChoice === "paper" && computerChoice === "rock" 
-    || humanChoice === "scissors" && computerChoice === "paper"){
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
-        humanScore++;
-    }
-    //when computer wins
-    else {
-        console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
-        computerScore++;
-    }
-}      
-
-// variables that work as arguments in PlayRound Function
-
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-
-
-// Calling Function
-playRound(humanSelection,computerSelection);
-
-// Score message with increment in it
-console.log(`Score: User ${humanScore} - ${computerScore} Computer`); */
-
-
-/* create playGame */
 
 function playGame() {
 
@@ -165,16 +113,7 @@ console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
 }
 
-let i = playGame();
+getComputerChoice();
 
-for (let i = 0; i < 4 ; i++) {
-    playGame();
 
-}
-
-/* Pseudocode for step 5:
-- playGame function calls playRound 
-- play 5 times
-- keep track of score
-- declares winner at the end */
 
