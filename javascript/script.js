@@ -36,13 +36,13 @@ when computer randomizes the number that outputs.*/
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        console.log("rock");
+        return "rock";
     }
     else if (randomNum === 1) {
-        console.log("paper");
+        return "paper";
     }
     else {
-        console.log("scissors");
+        return "scissors";
     }
 }
 
@@ -57,7 +57,7 @@ function getHumanChoice() {
     // here the function will return to the initial stage if user doesn't answer properly.
     }
     else {
-       console.log(userAnswer.toLowerCase());
+       return userAnswer.toLowerCase();
     }
 }
 
@@ -81,7 +81,8 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "paper" && computerChoice === "paper" 
     || humanChoice === "scissors" && computerChoice === "scissors") {
         console.log("It's a tie!");
-        return humanScore++ && computerScore++; 
+        humanScore++;
+        computerScore++; 
     }
     
     //when user wins
@@ -89,12 +90,12 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "paper" && computerChoice === "rock" 
     || humanChoice === "scissors" && computerChoice === "paper"){
         console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
-        return humanScore++;
+        humanScore++;
     }
     //when computer wins
     else {
         console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
-        return computerScore++;
+        computerScore++;
     }
 }      
 
@@ -110,10 +111,12 @@ playRound(humanSelection,computerSelection);
 // Score message with increment in it
 console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
-
 }
 
-getComputerChoice();
+let i = playGame();
 
+for (i = 1; i < 5; i++) {
+    playGame();
+}
 
 
