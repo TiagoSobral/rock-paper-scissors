@@ -19,15 +19,19 @@ function getComputerChoice() {
 /* get human choice function: (used lower case function
 to receive any type of input from user.) */
 
+
 function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
     if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
-        alert("Unknown Command! Try Again");
+        alert("Unknown Command! Try Again with Rock, Paper or Scissors");
         getHumanChoice();
     // here the function will return to the initial stage if user doesn't answer properly.
     }
+    else if (userAnswer.toUpperCase() === "ROCK" || userAnswer.toUpperCase() === "PAPER" || userAnswer.toUpperCase() === "SCISSORS" ) {
+        return userAnswer.toUpperCase();
+    }
     else {
-       return userAnswer.toUpperCase();
+       alert("Wrong Input! Try Rock, Paper or Scissors!");
     }
 }
 
@@ -39,11 +43,15 @@ let computerScore = 0;
 
 
 
-function playGame(human,computer) {
+function playGame() {
 
 /* create a new function named playRound */
 
 function playRound(humanChoice, computerChoice) {
+   if (humanChoice === undefined) {
+    return "Invalid Command!";
+   }    
+   else { 
     console.log(`User Chooses: ${humanChoice}!`);
     console.log(`Computer Chooses: ${computerChoice}!`);
     
@@ -66,6 +74,11 @@ function playRound(humanChoice, computerChoice) {
         console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
     }
+    
+// Score message with increment in it
+console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
+
+}
 }      
 
 // variables that work as arguments in PlayRound Function
@@ -78,7 +91,7 @@ let computerSelection = getComputerChoice();
 playRound(humanSelection,computerSelection);
 
 // Score message with increment in it
-console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
+//console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
 
 // emply console log, to improve readability rounds
