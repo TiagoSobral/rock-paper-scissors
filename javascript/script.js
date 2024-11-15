@@ -119,13 +119,20 @@ console.log("");
 let i = playGame();
 
 for (i = 1; i < 5; i++) {
-    if (i < 5) {
-        playGame();
-    }
-    else {
-        console.log("The Winner is sdadsada");
-    }
+    playGame();
 }
+
+if (humanScore > computerScore) {
+    console.log("The User Wins the Game!");
+}
+else if (humanScore === computerScore) {
+    console.log("Nobody Wins!");
+}
+else {
+    console.log("The Computer Wins the Game!");
+}
+
+
 
 /* 
 - store human score
