@@ -81,9 +81,7 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === "ROCK" && computerChoice === "ROCK" 
     || humanChoice === "PAPER" && computerChoice === "PAPER" 
     || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") {
-        console.log("It's a tie!");
-        humanScore++;
-        computerScore++; 
+        console.log("It's a tie!"); 
     }
     
     //when user wins
