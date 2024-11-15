@@ -111,12 +111,30 @@ playRound(humanSelection,computerSelection);
 // Score message with increment in it
 console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
+console.log("");
+
 }
 
 let i = playGame();
 
 for (i = 1; i < 5; i++) {
-    playGame();
+    if (i < 5) {
+        playGame();
+    }
+    else if (i === 5) {ß
+        console.log("The Winner is sdadsada");
+    }
 }
+
+/* 
+- store human score
+- store computer score
+
+- return human score
+- return computer score
+
+- add human score to new one
+- add computer score to new one */
+
 
 
