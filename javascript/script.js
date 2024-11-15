@@ -3,26 +3,26 @@
 /* 
 Planing:
 - the program has no interface
-- the only interaction will be the user choosing rock, paper or scissors.
+- the only interaction will be the user choosing ROCK, PAPER or SCISSORS.
 - the user will have to input the data, (a string into the console).
 - the desired output will be to compare the input from the user versus the output from the computer and compare to see who wins.
 - the game will be a best of 3 (possibly)
 
 
-- the computer chooses randomly rock, paper or scissors.
-- the user chooses rock paper or scissors.
+- the computer chooses randomly ROCK, PAPER or SCISSORS.
+- the user chooses ROCK PAPER or SCISSORS.
 - what did the computer choose?
 - what did the user choose?
-- rock beats scissors; scissors beats paper; paper beats rock;
+- ROCK beats SCISSORS; SCISSORS beats PAPER; PAPER beats ROCK;
 
 
 
 Pseudocode:
-- when the user inputs a string : "Rock", "Paper" or "Scissors";
+- when the user inputs a string : "Rock", "PAPER" or "Scissors";
 - the computer should randomize and output one of the same 3 choices.
-- if the user chooses rock and computer scissors print (computer looses)
-- if the user chooses scissors and computer chooses paper print (computer looses) 
-- if the user chooses paper and computer rock print (computer looses.)
+- if the user chooses ROCK and computer SCISSORS print (computer looses)
+- if the user chooses SCISSORS and computer chooses PAPER print (computer looses) 
+- if the user chooses PAPER and computer ROCK print (computer looses.)
 - if the user chooses the same as the computer print (its a tie! try again!)
 - else print (user looses! Play again!)
 */
@@ -36,13 +36,13 @@ when computer randomizes the number that outputs.*/
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        return "rock";
+        return "ROCK";
     }
     else if (randomNum === 1) {
-        return "paper";
+        return "PAPER";
     }
     else {
-        return "scissors";
+        return "SCISSORS";
     }
 }
 
@@ -57,17 +57,18 @@ function getHumanChoice() {
     // here the function will return to the initial stage if user doesn't answer properly.
     }
     else {
-       return userAnswer.toLowerCase();
+       return userAnswer.toUpperCase();
     }
 }
 
-function playGame() {
+let humanScore = 0;
+let computerScore = 0;
+
+function playGame(human,computer) {
 
     /* create 2 new variable names humanScore & computerScore
 in the global scope */
 
-let humanScore = 0;
-let computerScore = 0;
 
 
 /* create a new function named playRound */
@@ -77,18 +78,18 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Computer Chooses: ${computerChoice}!`);
     
     //when it's tie
-    if (humanChoice === "rock" && computerChoice === "rock" 
-    || humanChoice === "paper" && computerChoice === "paper" 
-    || humanChoice === "scissors" && computerChoice === "scissors") {
+    if (humanChoice === "ROCK" && computerChoice === "ROCK" 
+    || humanChoice === "PAPER" && computerChoice === "PAPER" 
+    || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") {
         console.log("It's a tie!");
         humanScore++;
         computerScore++; 
     }
     
     //when user wins
-    else if (humanChoice === "rock" && computerChoice === "scissors" 
-    || humanChoice === "paper" && computerChoice === "rock" 
-    || humanChoice === "scissors" && computerChoice === "paper"){
+    else if (humanChoice === "ROCK" && computerChoice === "SCISSORS" 
+    || humanChoice === "PAPER" && computerChoice === "ROCK" 
+    || humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++;
     }
@@ -121,7 +122,7 @@ for (i = 1; i < 5; i++) {
     if (i < 5) {
         playGame();
     }
-    else if (i === 5) {ß
+    else {
         console.log("The Winner is sdadsada");
     }
 }
