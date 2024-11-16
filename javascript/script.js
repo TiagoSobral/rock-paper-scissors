@@ -95,9 +95,10 @@ playRound(humanSelection,computerSelection);
 
 
 // emply console log, to improve readability rounds
-console.log("");
 
 }
+
+
 
 /* Loop to play 5 rounds of the game */
 
@@ -105,6 +106,7 @@ let i = playGame();
 
 for (i = 1; i < 5; i++) {
     playGame();
+    console.log("");
 }
 
 /* if statement to print win messsage at the end of the 5th round*/
