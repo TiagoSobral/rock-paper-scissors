@@ -49,7 +49,6 @@ function playGame() {
 
 function playRound(humanChoice, computerChoice) {
    if (humanChoice === undefined) {
-    return "Invalid Command!";
    }    
    else { 
     console.log(`User Chooses: ${humanChoice}!`);
@@ -76,7 +75,7 @@ function playRound(humanChoice, computerChoice) {
     }
     
 // Score message with increment in it
-console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
+    console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
 }
 }      
@@ -93,18 +92,10 @@ playRound(humanSelection,computerSelection);
 // Score message with increment in it
 //console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
 
-
-// emply console log, to improve readability rounds
-
 }
-
-
-
 /* Loop to play 5 rounds of the game */
 
-let i = playGame();
-
-for (i = 1; i < 5; i++) {
+for (i = 0; i < 5; i++) {
     playGame();
     console.log("");
 }
