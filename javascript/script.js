@@ -37,8 +37,7 @@ let computerScore = 0;
 //GAME
 function playGame() {
 
-/* create a new function named playRound */
-
+//ONE ROUND
 function playRound(humanChoice, computerChoice) {
    if (humanChoice === undefined) {
    }    
@@ -72,11 +71,11 @@ function playRound(humanChoice, computerChoice) {
 }
 }      
 
-// variables that work as arguments in PlayRound Function
+//LOCAL VARIABLES
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 
-// Calling Function
+//CALLING PLAYROUND FUNCTION
 playRound(humanSelection,computerSelection);
 }
 
