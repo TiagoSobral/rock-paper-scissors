@@ -1,8 +1,5 @@
 
-/*create a function named getComputerChoice 
-(used a numer to attach to a specific string in order to return the string
-when computer randomizes the number that outputs.*/
-
+//USER INPUT
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
@@ -16,10 +13,7 @@ function getComputerChoice() {
     }
 }
 
-/* get human choice function: (used lower case function
-to receive any type of input from user.) */
-
-
+//COMPUTER INPUT
 function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
     if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
@@ -35,14 +29,12 @@ function getHumanChoice() {
     }
 }
 
-/* create 2 new variable names humanScore & computerScore
-in the global scope */
 
+//GLOBAL VARIABLES
 let humanScore = 0;
 let computerScore = 0;
 
-
-
+//GAME
 function playGame() {
 
 /* create a new function named playRound */
@@ -81,27 +73,21 @@ function playRound(humanChoice, computerChoice) {
 }      
 
 // variables that work as arguments in PlayRound Function
-
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 
-
 // Calling Function
 playRound(humanSelection,computerSelection);
-
-// Score message with increment in it
-//console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
-
 }
-/* Loop to play 5 rounds of the game */
 
+
+//LOOP FOR 5 ROUNDS!
 for (i = 0; i < 5; i++) {
     playGame();
     console.log("");
 }
 
-/* if statement to print win messsage at the end of the 5th round*/
-
+//GAME WINNER MESSAGE POSSIBLITIES
 if (humanScore > computerScore) {
     console.log("The User Wins the Game!");
 }
