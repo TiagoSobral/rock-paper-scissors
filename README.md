@@ -26,6 +26,4 @@ Pseudocode:
 - if the user chooses the same as the computer print (its a tie! try again!)
 - else print (user looses! Play again!)
 
-THERE IS A PROBLEM WITH THE CODE IN THE IF STATEMENT, THE USER IS NOT COMING BACK WITH A STRING, MIGHT HAVE TO SEPARATE && || INSTEAD.
-
 # rock-paper-scissors
