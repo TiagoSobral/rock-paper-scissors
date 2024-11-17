@@ -16,13 +16,12 @@ function getComputerChoice() {
 //COMPUTER INPUT
 function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
-    if (userAnswer.toUpperCase() === "ROCK" || userAnswer.toUpperCase() === "PAPER" || userAnswer.toUpperCase() === "SCISSORS" ) {
-        return userAnswer.toUpperCase();
-    }
-    else if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
-        console.log("Unknown Command! Try Again with Rock, Paper or Scissors");
+    if (userAnswer === null) {
+        console.log("Wrong Input! Try Rock, Paper or Scissors!");
         getHumanChoice();
-    // here the function will return to the initial stage if user doesn't answer properly.
+    }
+    else if (userAnswer.toUpperCase() === "ROCK" || userAnswer.toUpperCase() === "PAPER" || userAnswer.toUpperCase() === "SCISSORS" ) {
+        return userAnswer.toUpperCase();
     }
     else {
        console.log("Wrong Input! Try Rock, Paper or Scissors!");
@@ -34,15 +33,17 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+
 //GAME
 function playGame() {
 
 //ONE ROUND
 function playRound(humanChoice, computerChoice) {
-   if (humanChoice === undefined) {
-    return;
+   if (humanChoice === "" || humanChoice === null || humanChoice === undefined) {
+    playGame();
    }    
    else { 
+    console.log("Round:", i);
     console.log(`User Chooses: ${humanChoice}!`);
     console.log(`Computer Chooses: ${computerChoice}!`);
     
@@ -68,9 +69,12 @@ function playRound(humanChoice, computerChoice) {
     
 // Score message with increment in it
     console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
-
+    console.log("");
+//else    
 }
-}      
+//playRound
+}
+//loop     
 
 //LOCAL VARIABLES
 let humanSelection = getHumanChoice();
@@ -78,15 +82,17 @@ let computerSelection = getComputerChoice();
 
 //CALLING PLAYROUND FUNCTION
 playRound(humanSelection,computerSelection);
+
+
 }
 
+let i = 1;
 
-//LOOP FOR 5 ROUNDS!
 for (i = 1; i < 6; i++) {
-    console.log("Round:", i)
     playGame();
-    console.log("");
 }
+
+
 
 //GAME WINNER MESSAGE POSSIBLITIES
 if (humanScore > computerScore) {
