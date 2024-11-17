@@ -18,14 +18,17 @@ function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
     if (userAnswer === null) {
         console.log("Wrong Input! Try Rock, Paper or Scissors!");
-        getHumanChoice();
+        /* return getHumanChoice is important so it is called again and we can retrive its value after. 
+        Otherwise it doesn't return a value hence the blank outputs. */
+        return getHumanChoice();
     }
     else if (userAnswer.toUpperCase() === "ROCK" || userAnswer.toUpperCase() === "PAPER" || userAnswer.toUpperCase() === "SCISSORS" ) {
         return userAnswer.toUpperCase();
     }
     else {
        console.log("Wrong Input! Try Rock, Paper or Scissors!");
-       getHumanChoice();
+       userAnswer;
+       return getHumanChoice();
     }
 }
 
@@ -82,17 +85,13 @@ let computerSelection = getComputerChoice();
 
 //CALLING PLAYROUND FUNCTION
 playRound(humanSelection,computerSelection);
-
-
 }
 
+//LOOP
 let i = 1;
-
 for (i = 1; i < 6; i++) {
     playGame();
 }
-
-
 
 //GAME WINNER MESSAGE POSSIBLITIES
 if (humanScore > computerScore) {
