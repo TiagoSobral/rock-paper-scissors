@@ -16,19 +16,19 @@ function getComputerChoice() {
 //COMPUTER INPUT
 function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
-    if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
-        alert("Unknown Command! Try Again with Rock, Paper or Scissors");
+    if (userAnswer.toUpperCase() === "ROCK" || userAnswer.toUpperCase() === "PAPER" || userAnswer.toUpperCase() === "SCISSORS" ) {
+        return userAnswer.toUpperCase();
+    }
+    else if (userAnswer === "" || userAnswer === null || userAnswer === undefined) {
+        console.log("Unknown Command! Try Again with Rock, Paper or Scissors");
         getHumanChoice();
     // here the function will return to the initial stage if user doesn't answer properly.
     }
-    else if (userAnswer.toUpperCase() === "ROCK" || userAnswer.toUpperCase() === "PAPER" || userAnswer.toUpperCase() === "SCISSORS" ) {
-        return userAnswer.toUpperCase();
-    }
     else {
-       alert("Wrong Input! Try Rock, Paper or Scissors!");
+       console.log("Wrong Input! Try Rock, Paper or Scissors!");
+       getHumanChoice();
     }
 }
-
 
 //GLOBAL VARIABLES
 let humanScore = 0;
@@ -40,6 +40,7 @@ function playGame() {
 //ONE ROUND
 function playRound(humanChoice, computerChoice) {
    if (humanChoice === undefined) {
+    return;
    }    
    else { 
     console.log(`User Chooses: ${humanChoice}!`);
@@ -81,7 +82,8 @@ playRound(humanSelection,computerSelection);
 
 
 //LOOP FOR 5 ROUNDS!
-for (i = 0; i < 5; i++) {
+for (i = 1; i < 6; i++) {
+    console.log("Round:", i)
     playGame();
     console.log("");
 }
@@ -96,8 +98,3 @@ else if (humanScore === computerScore) {
 else {
     console.log("The Computer Wins the Game!");
 }
-
-
-
-
-
