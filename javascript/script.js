@@ -1,19 +1,17 @@
 
-//USER INPUT
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
         return "ROCK";
-    }
+        }
     else if (randomNum === 1) {
         return "PAPER";
-    }
+        }
     else {
         return "SCISSORS";
-    }
+        }
 }
 
-//COMPUTER INPUT
 function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
     if (userAnswer === null) {
@@ -21,15 +19,15 @@ function getHumanChoice() {
         /* return getHumanChoice is important so it is called again and we can retrive its value after. 
         Otherwise it doesn't return a value hence the blank outputs. */
         return getHumanChoice();
-    }
+        }
     else if (userAnswer.toUpperCase() === "ROCK" || userAnswer.toUpperCase() === "PAPER" || userAnswer.toUpperCase() === "SCISSORS" ) {
         return userAnswer.toUpperCase();
-    }
+        }
     else {
        console.log("Wrong Input! Try Rock, Paper or Scissors!");
        userAnswer;
        return getHumanChoice();
-    }
+        }
 }
 
 //GLOBAL VARIABLES
@@ -44,7 +42,7 @@ function playGame() {
 function playRound(humanChoice, computerChoice) {
    if (humanChoice === "" || humanChoice === null || humanChoice === undefined) {
     playGame();
-   }    
+        }    
    else { 
     console.log("Round:", i);
     console.log(`User Chooses: ${humanChoice}!`);
@@ -55,7 +53,7 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "PAPER" && computerChoice === "PAPER" 
     || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") {
         console.log("It's a Tie!"); 
-    }
+        }
     
     //when user wins
     else if (humanChoice === "ROCK" && computerChoice === "SCISSORS" 
@@ -63,37 +61,32 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++;
-    }
+        }
     //when computer wins
     else {
         console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
-    }
+        }
     
-// Score message with increment in it
     console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
     console.log("");
-//else    
-}
+    //else    
+    }
 //playRound
 }
 //loop     
 
-//LOCAL VARIABLES
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 
-//CALLING PLAYROUND FUNCTION
 playRound(humanSelection,computerSelection);
 }
 
-//LOOP
 let i = 1;
 for (i = 1; i < 6; i++) {
     playGame();
 }
 
-//GAME WINNER MESSAGE POSSIBLITIES
 if (humanScore > computerScore) {
     console.log("The User Wins the Game!");
 }
