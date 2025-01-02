@@ -1,8 +1,20 @@
 
 const body = document.querySelector("body");
+
 const rock = document.createElement("button");
-const scissors = document.createElement("button");
+rock.textContent = "ROCK";
+body.appendChild(rock);
+
 const paper = document.createElement("button");
+paper.textContent = "PAPER";
+body.appendChild(paper);
+
+const scissors = document.createElement("button");
+scissors.textContent = "SCISSORS";
+body.appendChild(scissors);
+
+const btns = document.querySelectorAll("button");
+
 
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
@@ -18,7 +30,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let userAnswer = prompt("Rock, Paper, Scissors: ");
+    let userAnswer = btnAnswer;
     if (userAnswer === null) {
         console.log("Wrong Input! Try Rock, Paper or Scissors!");
         /* return getHumanChoice is important so it is called again and we can retrieve its value after. 
@@ -49,7 +61,7 @@ function playRound(humanChoice, computerChoice) {
     playGame();
         }    
    else { 
-    console.log("Round:", i);
+    //console.log("Round:", i);
     console.log(`User Chooses: ${humanChoice}!`);
     console.log(`Computer Chooses: ${computerChoice}!`);
     
@@ -79,13 +91,23 @@ function playRound(humanChoice, computerChoice) {
     }
 //playRound
 }
-//loop     
+//loop   
+btns.forEach( (button) => {
+    button.addEventListener("click", () => {
+        btnAnswer = button.textContent;
+        playRound(btnAnswer,getComputerChoice());
+    })
+});
 
-let humanSelection = getHumanChoice();
+
+/*let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 
 playRound(humanSelection,computerSelection);
 }
+*/
+
+playGame();
 
 /*let i = 1;
 for (i = 1; i < 6; i++) {
