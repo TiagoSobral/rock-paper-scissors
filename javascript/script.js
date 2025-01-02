@@ -1,4 +1,9 @@
 
+const body = document.querySelector("body");
+const rock = document.createElement("button");
+const scissors = document.createElement("button");
+const paper = document.createElement("button");
+
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
@@ -16,7 +21,7 @@ function getHumanChoice() {
     let userAnswer = prompt("Rock, Paper, Scissors: ");
     if (userAnswer === null) {
         console.log("Wrong Input! Try Rock, Paper or Scissors!");
-        /* return getHumanChoice is important so it is called again and we can retrive its value after. 
+        /* return getHumanChoice is important so it is called again and we can retrieve its value after. 
         Otherwise it doesn't return a value hence the blank outputs. */
         return getHumanChoice();
         }
@@ -82,10 +87,11 @@ let computerSelection = getComputerChoice();
 playRound(humanSelection,computerSelection);
 }
 
-let i = 1;
+/*let i = 1;
 for (i = 1; i < 6; i++) {
     playGame();
 }
+*/
 
 if (humanScore > computerScore) {
     console.log("The User Wins the Game!");
