@@ -15,6 +15,9 @@ body.appendChild(scissors);
 
 const btns = document.querySelectorAll("button");
 
+const div = document.createElement("div");
+body.appendChild(div);
+
 
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
@@ -62,31 +65,48 @@ function playRound(humanChoice, computerChoice) {
         }    
    else { 
     //console.log("Round:", i);
-    console.log(`User Chooses: ${humanChoice}!`);
-    console.log(`Computer Chooses: ${computerChoice}!`);
+    const human = document.createElement("div");
+    human.textContent = `User Chooses: ${btnAnswer}!`
+    div.appendChild(human);
+    
+    
+    const computer = document.createElement("div");
+    computer.textContent = `Computer Chooses: ${computerChoice}!`
+    div.appendChild(computer);
     
     //when it's tie
     if (humanChoice === "ROCK" && computerChoice === "ROCK" 
     || humanChoice === "PAPER" && computerChoice === "PAPER" 
     || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") {
-        console.log("It's a Tie!"); 
+        //console.log("It's a Tie!"); 
+        const tie = document.createElement("div");
+        tie.textContent = "It's a Tie!"
+        div.appendChild(tie);
         }
     
     //when user wins
     else if (humanChoice === "ROCK" && computerChoice === "SCISSORS" 
     || humanChoice === "PAPER" && computerChoice === "ROCK" 
     || humanChoice === "SCISSORS" && computerChoice === "PAPER"){
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+        const userWin = document.createElement("div");
+        userWin.textContent = `You Win! ${humanChoice} beats ${computerChoice}!`
+        div.appendChild(userWin)
+        //console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++;
         }
     //when computer wins
     else {
-        console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
+        const cpuWin = document.createElement("div");
+        cpuWin.textContent = `You Loose! ${computerChoice} beats ${humanChoice}!`
+        div.appendChild(cpuWin);
+        //console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
         }
     
-    console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
-    console.log("");
+    //console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
+    //console.log("");
+
+
     //else    
     }
 //playRound
@@ -95,9 +115,11 @@ function playRound(humanChoice, computerChoice) {
 btns.forEach( (button) => {
     button.addEventListener("click", () => {
         btnAnswer = button.textContent;
-        playRound(btnAnswer,getComputerChoice());
+        playRound(btnAnswer,getComputerChoice()); 
     })
 });
+}
+
 
 
 /*let humanSelection = getHumanChoice();
