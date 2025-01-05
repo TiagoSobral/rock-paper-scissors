@@ -77,8 +77,7 @@ function playRound(humanChoice, computerChoice) {
     //when it's tie
     if (humanChoice === "ROCK" && computerChoice === "ROCK" 
     || humanChoice === "PAPER" && computerChoice === "PAPER" 
-    || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") {
-        //console.log("It's a Tie!"); 
+    || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") { 
         const tie = document.createElement("div");
         tie.textContent = "It's a Tie!"
         div.appendChild(tie);
@@ -91,7 +90,6 @@ function playRound(humanChoice, computerChoice) {
         const userWin = document.createElement("div");
         userWin.textContent = `You Win! ${humanChoice} beats ${computerChoice}!`
         div.appendChild(userWin)
-        //console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++;
         }
     //when computer wins
@@ -99,37 +97,25 @@ function playRound(humanChoice, computerChoice) {
         const cpuWin = document.createElement("div");
         cpuWin.textContent = `You Loose! ${computerChoice} beats ${humanChoice}!`
         div.appendChild(cpuWin);
-        //console.log(`You Loose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++;
         }
-    
-    //console.log(`Score: User ${humanScore} - ${computerScore} Computer`);
-    //console.log("");
+
 
 
     //else    
     }
 //playRound
+}  
+playRound(btnAnswer,getComputerChoice());
 }
-//loop   
+
 btns.forEach( (button) => {
     button.addEventListener("click", () => {
         btnAnswer = button.textContent;
-        playRound(btnAnswer,getComputerChoice()); 
+        playGame(); 
     })
 });
-}
 
-
-
-/*let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-
-playRound(humanSelection,computerSelection);
-}
-*/
-
-playGame();
 
 /*let i = 1;
 for (i = 1; i < 6; i++) {
