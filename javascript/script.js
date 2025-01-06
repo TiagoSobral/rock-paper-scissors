@@ -15,8 +15,9 @@ body.appendChild(scissors);
 
 const btns = document.querySelectorAll("button");
 
-const div = document.createElement("div");
-body.appendChild(div);
+const game = document.createElement("div");
+body.appendChild(game);
+game.classList.toggle("game");
 
 
 function getComputerChoice() {
@@ -53,6 +54,7 @@ function getHumanChoice() {
 //GLOBAL VARIABLES
 let humanScore = 0;
 let computerScore = 0;
+let round = 1;
 
 
 //GAME
@@ -64,15 +66,20 @@ function playRound(humanChoice, computerChoice) {
     playGame();
         }    
    else { 
-    //console.log("Round:", i);
+
+    const round = document.createElement("div");
+    game.appendChild(round);
+    round.classList.toggle(`1`);
+
+    //console.log("Round:", i) or add round++ or listen to button 5 times;
     const human = document.createElement("div");
     human.textContent = `User Chooses: ${btnAnswer}!`
-    div.appendChild(human);
+    round.appendChild(human);
     
     
     const computer = document.createElement("div");
     computer.textContent = `Computer Chooses: ${computerChoice}!`
-    div.appendChild(computer);
+    round.appendChild(computer);
     
     //when it's tie
     if (humanChoice === "ROCK" && computerChoice === "ROCK" 
@@ -80,7 +87,8 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") { 
         const tie = document.createElement("div");
         tie.textContent = "It's a Tie!"
-        div.appendChild(tie);
+        round.appendChild(tie);
+        round++;
         }
     
     //when user wins
@@ -89,15 +97,17 @@ function playRound(humanChoice, computerChoice) {
     || humanChoice === "SCISSORS" && computerChoice === "PAPER"){
         const userWin = document.createElement("div");
         userWin.textContent = `You Win! ${humanChoice} beats ${computerChoice}!`
-        div.appendChild(userWin)
+        round.appendChild(userWin)
         humanScore++;
+        round++;
         }
     //when computer wins
     else {
         const cpuWin = document.createElement("div");
         cpuWin.textContent = `You Loose! ${computerChoice} beats ${humanChoice}!`
-        div.appendChild(cpuWin);
+        round.appendChild(cpuWin);
         computerScore++;
+        round++;
         }
 
 
@@ -107,6 +117,21 @@ function playRound(humanChoice, computerChoice) {
 //playRound
 }  
 playRound(btnAnswer,getComputerChoice());
+
+if (humanScore > computerScore) {
+    console.log("User Wins!");
+
+}
+else if (humanScore === computerScore) {
+    console.log("Nobody Wins!");
+}
+else {
+    console.log("The Computer Wins the Game!");
+}
+
+console.log(humanScore);
+console.log(computerScore);
+
 }
 
 btns.forEach( (button) => {
@@ -123,12 +148,4 @@ for (i = 1; i < 6; i++) {
 }
 */
 
-if (humanScore > computerScore) {
-    console.log("The User Wins the Game!");
-}
-else if (humanScore === computerScore) {
-    console.log("Nobody Wins!");
-}
-else {
-    console.log("The Computer Wins the Game!");
-}
+
