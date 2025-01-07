@@ -119,26 +119,27 @@ function playRound(humanChoice, computerChoice) {
 }  
 playRound(btnAnswer,getComputerChoice());
 
-if (humanScore > computerScore) {
-    console.log("User Wins!");
+if (roundNumber > 5) {
+    if (humanScore > computerScore) {
+        console.log("User Wins!");
+    }
+    else if (humanScore === computerScore) {
+        console.log("Nobody Wins!");
+    }
+    else {
+        console.log("The Computer Wins the Game!");
+    }
 
 }
-else if (humanScore === computerScore) {
-    console.log("Nobody Wins!");
-}
-else {
-    console.log("The Computer Wins the Game!");
-}
-
-console.log(humanScore);
-console.log(computerScore);
+//console.log(humanScore);
+//console.log(computerScore);
 
 }
 
 btns.forEach( (button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("mousedown", (e) => {
         btnAnswer = button.textContent;
-        playGame(); 
+        playGame();
     })
 });
 
