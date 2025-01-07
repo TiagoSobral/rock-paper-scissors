@@ -54,7 +54,7 @@ function getHumanChoice() {
 //GLOBAL VARIABLES
 let humanScore = 0;
 let computerScore = 0;
-let round = 1;
+let roundNumber = 1;
 
 
 //GAME
@@ -69,7 +69,7 @@ function playRound(humanChoice, computerChoice) {
 
     const round = document.createElement("div");
     game.appendChild(round);
-    round.classList.toggle(`1`);
+    round.classList.add(`round-${roundNumber}`);
 
     //console.log("Round:", i) or add round++ or listen to button 5 times;
     const human = document.createElement("div");
@@ -81,6 +81,7 @@ function playRound(humanChoice, computerChoice) {
     computer.textContent = `Computer Chooses: ${computerChoice}!`
     round.appendChild(computer);
     
+    
     //when it's tie
     if (humanChoice === "ROCK" && computerChoice === "ROCK" 
     || humanChoice === "PAPER" && computerChoice === "PAPER" 
@@ -88,7 +89,7 @@ function playRound(humanChoice, computerChoice) {
         const tie = document.createElement("div");
         tie.textContent = "It's a Tie!"
         round.appendChild(tie);
-        round++;
+        roundNumber++;
         }
     
     //when user wins
@@ -99,7 +100,7 @@ function playRound(humanChoice, computerChoice) {
         userWin.textContent = `You Win! ${humanChoice} beats ${computerChoice}!`
         round.appendChild(userWin)
         humanScore++;
-        round++;
+        roundNumber++;
         }
     //when computer wins
     else {
@@ -107,7 +108,7 @@ function playRound(humanChoice, computerChoice) {
         cpuWin.textContent = `You Loose! ${computerChoice} beats ${humanChoice}!`
         round.appendChild(cpuWin);
         computerScore++;
-        round++;
+        roundNumber++;
         }
 
 
