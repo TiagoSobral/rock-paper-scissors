@@ -2,27 +2,36 @@
 const body = document.querySelector("body");
 
 const groupedBtns = document.createElement("div");
-groupedBtns.classList.toggle("buttons");
-body.appendChild(groupedBtns);
-
 const rock = document.createElement("button");
-rock.textContent = "ROCK";
-groupedBtns.appendChild(rock);
-
 const paper = document.createElement("button");
-paper.textContent = "PAPER";
-groupedBtns.appendChild(paper);
-
 const scissors = document.createElement("button");
-scissors.textContent = "SCISSORS";
-groupedBtns.appendChild(scissors);
 
 const game = document.createElement("div");
-body.appendChild(game);
+const round = document.createElement("div");
+const score = document.createElement("div");
+const winner = document.createElement("div");
+
+groupedBtns.classList.toggle("buttons");
 game.classList.toggle("game");
+round.classList.toggle("round");
+score.classList.toggle("score");
+winner.classList.toggle("winner");
+
+rock.textContent = "ROCK";
+paper.textContent = "PAPER";
+scissors.textContent = "SCISSORS";
+
+body.appendChild(groupedBtns);
+groupedBtns.appendChild(rock);
+groupedBtns.appendChild(paper);
+groupedBtns.appendChild(scissors);
+
+body.appendChild(game);
+body.appendChild(round);
+body.appendChild(score);
+body.appendChild(winner);
 
 const btn = document.querySelectorAll("button");
-
 
 btn.forEach( (button) => {
     button.addEventListener("mousedown", () => {
