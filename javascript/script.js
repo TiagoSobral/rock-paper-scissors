@@ -1,23 +1,36 @@
 
 const body = document.querySelector("body");
 
+const groupedBtns = document.createElement("div");
+groupedBtns.classList.toggle("buttons");
+body.appendChild(groupedBtns);
+
 const rock = document.createElement("button");
 rock.textContent = "ROCK";
-body.appendChild(rock);
+groupedBtns.appendChild(rock);
 
 const paper = document.createElement("button");
 paper.textContent = "PAPER";
-body.appendChild(paper);
+groupedBtns.appendChild(paper);
 
 const scissors = document.createElement("button");
 scissors.textContent = "SCISSORS";
-body.appendChild(scissors);
-
-const btns = document.querySelectorAll("button");
+groupedBtns.appendChild(scissors);
 
 const game = document.createElement("div");
 body.appendChild(game);
 game.classList.toggle("game");
+
+const btn = document.querySelectorAll("button");
+
+
+btn.forEach( (button) => {
+    button.addEventListener("mousedown", () => {
+        btnAnswer = button.textContent;
+        playGame();
+    })
+});
+
 
 
 function getComputerChoice() {
@@ -135,13 +148,6 @@ if (roundNumber > 5) {
 //console.log(computerScore);
 
 }
-
-btns.forEach( (button) => {
-    button.addEventListener("mousedown", (e) => {
-        btnAnswer = button.textContent;
-        playGame();
-    })
-});
 
 
 /*let i = 1;
