@@ -7,13 +7,13 @@ const paper = document.createElement("button");
 const scissors = document.createElement("button");
 
 const game = document.createElement("div");
-const round = document.createElement("div");
+const groupedRounds = document.createElement("div");
 const score = document.createElement("div");
 const winner = document.createElement("div");
 
 groupedBtns.classList.toggle("buttons");
 game.classList.toggle("game");
-round.classList.toggle("round");
+groupedRounds.classList.toggle("round-message");
 score.classList.toggle("score");
 winner.classList.toggle("winner");
 
@@ -27,7 +27,7 @@ groupedBtns.appendChild(paper);
 groupedBtns.appendChild(scissors);
 
 body.appendChild(game);
-body.appendChild(round);
+body.appendChild(groupedRounds);
 body.appendChild(score);
 body.appendChild(winner);
 
@@ -90,18 +90,16 @@ function playRound(humanChoice, computerChoice) {
    else { 
 
     const round = document.createElement("div");
-    game.appendChild(round);
-    round.classList.add(`round-${roundNumber}`);
-
-    //console.log("Round:", i) or add round++ or listen to button 5 times;
     const human = document.createElement("div");
-    human.textContent = `User Chooses: ${btnAnswer}!`
-    round.appendChild(human);
-    
-    
     const computer = document.createElement("div");
-    computer.textContent = `Computer Chooses: ${computerChoice}!`
+
+    game.appendChild(round);
+    round.appendChild(human);
     round.appendChild(computer);
+
+    round.classList.add(`round-${roundNumber}`);
+    human.textContent = `User Chooses: ${btnAnswer}!`
+    computer.textContent = `Computer Chooses: ${computerChoice}!`
     
     
     //when it's tie
