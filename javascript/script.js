@@ -88,27 +88,14 @@ function playRound(humanChoice, computerChoice) {
     playGame();
         }    
    else { 
-
-    const round = document.createElement("div");
-    const human = document.createElement("div");
-    const computer = document.createElement("div");
-
-    game.appendChild(round);
-    round.appendChild(human);
-    round.appendChild(computer);
-
-    round.classList.add(`round-${roundNumber}`);
-    human.textContent = `User Chooses: ${btnAnswer}!`
-    computer.textContent = `Computer Chooses: ${computerChoice}!`
+    game.textContent = `You Choose: ${btnAnswer}! Computer Chooses: ${computerChoice}!`;
     
     
     //when it's tie
     if (humanChoice === "ROCK" && computerChoice === "ROCK" 
     || humanChoice === "PAPER" && computerChoice === "PAPER" 
     || humanChoice === "SCISSORS" && computerChoice === "SCISSORS") { 
-        const tie = document.createElement("div");
-        tie.textContent = "It's a Tie!"
-        round.appendChild(tie);
+        groupedRounds.textContent = "It's a Tie!"
         roundNumber++;
         }
     
@@ -116,17 +103,13 @@ function playRound(humanChoice, computerChoice) {
     else if (humanChoice === "ROCK" && computerChoice === "SCISSORS" 
     || humanChoice === "PAPER" && computerChoice === "ROCK" 
     || humanChoice === "SCISSORS" && computerChoice === "PAPER"){
-        const userWin = document.createElement("div");
-        userWin.textContent = `You Win! ${humanChoice} beats ${computerChoice}!`
-        round.appendChild(userWin)
+        groupedRounds.textContent = `You Win! ${humanChoice} beats ${computerChoice}!`;
         humanScore++;
         roundNumber++;
         }
     //when computer wins
     else {
-        const cpuWin = document.createElement("div");
-        cpuWin.textContent = `You Loose! ${computerChoice} beats ${humanChoice}!`
-        round.appendChild(cpuWin);
+        groupedRounds.textContent = `You Loose! ${computerChoice} beats ${humanChoice}!`;
         computerScore++;
         roundNumber++;
         }
@@ -139,28 +122,19 @@ function playRound(humanChoice, computerChoice) {
 }  
 playRound(btnAnswer,getComputerChoice());
 
-if (roundNumber > 5) {
-    if (humanScore > computerScore) {
-        console.log("User Wins!");
-    }
-    else if (humanScore === computerScore) {
-        console.log("Nobody Wins!");
-    }
-    else {
-        console.log("The Computer Wins the Game!");
-    }
+score.textContent = `User ${humanScore} - ${computerScore} Computer`;
 
+if (humanScore === 5) {
+    winner.textContent = "You Won!";
+    humanScore = 0;
+    computerScore = 0;
 }
-//console.log(humanScore);
-//console.log(computerScore);
-
+else if (computerScore === 5) {
+    winner.textContent = "You Lost";
+    humanScore = 0;
+    computerScore = 0;
 }
 
-
-/*let i = 1;
-for (i = 1; i < 6; i++) {
-    playGame();
 }
-*/
 
 
