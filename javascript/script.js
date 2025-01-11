@@ -6,6 +6,10 @@ const rock = document.createElement("button");
 const paper = document.createElement("button");
 const scissors = document.createElement("button");
 
+const rockImg = document.createElement("img");
+const paperImg = document.createElement("img");
+const scissorsImg = document.createElement("img");
+
 const game = document.createElement("div");
 const groupedRounds = document.createElement("div");
 const score = document.createElement("div");
@@ -17,19 +21,42 @@ groupedRounds.classList.toggle("round-message");
 score.classList.toggle("score");
 winner.classList.toggle("winner");
 
-rock.textContent = "ROCK";
-paper.textContent = "PAPER";
-scissors.textContent = "SCISSORS";
+rockImg.src = "./images/rock.png";
+rockImg.textContent = "ROCK";
+paperImg.src = "./images/paper.png";
+paperImg.textContent = "PAPER";
+scissorsImg.src = "./images/scissors.png";
+scissorsImg.textContent = "SCISSORS";
 
 body.appendChild(groupedBtns);
 groupedBtns.appendChild(rock);
 groupedBtns.appendChild(paper);
 groupedBtns.appendChild(scissors);
 
+rock.appendChild(rockImg);
+paper.appendChild(paperImg);
+scissors.appendChild(scissorsImg);
+
 body.appendChild(game);
 body.appendChild(groupedRounds);
 body.appendChild(score);
 body.appendChild(winner);
+
+rockImg.setAttribute("style", "width: 70px");
+rock.setAttribute("style", "border-radius: 10px");
+
+paperImg.setAttribute("style", "width: 70px");
+paper.setAttribute("style", "border-radius: 10px");
+
+scissorsImg.setAttribute("style", "width: 70px");
+scissors.setAttribute("style", "border-radius: 10px");
+
+groupedBtns.style.display = "flex";
+groupedBtns.style.justifyContent = "space-evenly";
+groupedBtns.style.backgroundColor = "gray";
+groupedBtns.style.padding = "20px"
+
+
 
 const btn = document.querySelectorAll("button");
 
