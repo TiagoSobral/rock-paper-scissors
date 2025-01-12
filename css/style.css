@@ -1,3 +1,14 @@
-.game{
-    background-color: black;
+body{
+    background-color: rgb(207, 207, 207);
+}
+
+button{
+    background-color: rgb(204, 229, 249);
+    padding: 10px;
+    border: auto;
+}
+
+.game, .round-message, .score, .winner{
+    display: flex;
+    justify-content: center;
 }
