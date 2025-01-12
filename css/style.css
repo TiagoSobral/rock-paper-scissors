@@ -6,6 +6,13 @@ button{
     background-color: rgb(204, 229, 249);
     padding: 10px;
     border: auto;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.buttons {
+    margin: -10px;
+    
 }
 
 .game, .round-message, .score, .winner{
