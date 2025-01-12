@@ -11,6 +11,9 @@ const paperImg = document.createElement("img");
 const scissorsImg = document.createElement("img");
 
 const game = document.createElement("div");
+const user = document.createElement("div");
+const cpu = document.createElement("div");
+
 const groupedRounds = document.createElement("div");
 const score = document.createElement("div");
 const winner = document.createElement("div");
@@ -28,6 +31,12 @@ paperImg.textContent = "PAPER";
 scissorsImg.src = "./images/scissors.png";
 scissorsImg.textContent = "SCISSORS";
 
+body.appendChild(score);
+body.appendChild(groupedRounds);
+body.appendChild(winner);
+body.appendChild(game);
+game.appendChild(user);
+game.appendChild(cpu);
 body.appendChild(groupedBtns);
 groupedBtns.appendChild(rock);
 groupedBtns.appendChild(paper);
@@ -37,24 +46,22 @@ rock.appendChild(rockImg);
 paper.appendChild(paperImg);
 scissors.appendChild(scissorsImg);
 
-body.appendChild(game);
-body.appendChild(groupedRounds);
-body.appendChild(score);
-body.appendChild(winner);
 
-rockImg.setAttribute("style", "width: 70px");
-rock.setAttribute("style", "border-radius: 10px");
 
-paperImg.setAttribute("style", "width: 70px");
-paper.setAttribute("style", "border-radius: 10px");
-
-scissorsImg.setAttribute("style", "width: 70px");
-scissors.setAttribute("style", "border-radius: 10px");
 
 groupedBtns.style.display = "flex";
 groupedBtns.style.justifyContent = "space-evenly";
 groupedBtns.style.backgroundColor = "gray";
 groupedBtns.style.padding = "20px"
+
+rockImg.style.width = "70px";
+rock.style.borderRadius = "10px";
+
+paperImg.style.width = "70px";
+paper.style.borderRadius = "10px";
+
+scissorsImg.style.width = "70px";
+scissors.style.borderRadius = "10px";
 
 
 
@@ -114,9 +121,7 @@ function playRound(humanChoice, computerChoice) {
    if (humanChoice === "" || humanChoice === null || humanChoice === undefined) {
     playGame();
         }    
-   else { 
-    game.textContent = `You Choose: ${btnAnswer}! Computer Chooses: ${computerChoice}!`;
-    
+   else {  
     
     //when it's tie
     if (humanChoice === "ROCK" && computerChoice === "ROCK" 
@@ -149,7 +154,10 @@ function playRound(humanChoice, computerChoice) {
 }  
 playRound(btnAnswer,getComputerChoice());
 
-score.textContent = `User ${humanScore} - ${computerScore} Computer`;
+user.textContent = ` YOU: ${humanScore} `;
+cpu.textContent = ` CPU: ${computerScore} `;
+
+//score.textContent = `User ${humanScore} - ${computerScore} Computer`;
 
 if (humanScore === 5) {
     winner.textContent = "You Won!";
