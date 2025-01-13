@@ -18,6 +18,9 @@ const groupedRounds = document.createElement("div");
 const score = document.createElement("div");
 const winner = document.createElement("div");
 
+const userChoiceImg = document.createElement("img");
+const cpuChoiceImg = document.createElement("img");
+
 groupedBtns.classList.toggle("buttons");
 game.classList.toggle("game");
 groupedRounds.classList.toggle("round-message");
@@ -46,8 +49,8 @@ rock.appendChild(rockImg);
 paper.appendChild(paperImg);
 scissors.appendChild(scissorsImg);
 
-
-
+score.appendChild(userChoiceImg);
+score.appendChild(cpuChoiceImg);
 
 groupedBtns.style.display = "flex";
 groupedBtns.style.justifyContent = "space-evenly";
@@ -63,13 +66,30 @@ paper.style.borderRadius = "10px";
 scissorsImg.style.width = "70px";
 scissors.style.borderRadius = "10px";
 
+userChoiceImg.style.width = "70px";
+cpuChoiceImg.style.width = "70px";
 
 
 const btn = document.querySelectorAll("button");
 
 btn.forEach( (button) => {
     button.addEventListener("mousedown", () => {
+        groupedRounds.textContent = "";
+        winner.textContent = "";
         btnAnswer = button.textContent;
+
+
+        if (btnAnswer === "ROCK") {
+            userChoiceImg.src = "./images/rock.png"
+            
+        }
+        else if (btnAnswer === "PAPER") {
+            userChoiceImg.src = "./images/paper.png"
+        }
+        else {
+            userChoiceImg.src = "./images/scissors.png"
+        }    
+
         playGame();
     })
 });
@@ -79,12 +99,15 @@ btn.forEach( (button) => {
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
+        cpuChoiceImg.src = "./images/rock.png"
         return "ROCK";
         }
     else if (randomNum === 1) {
+        cpuChoiceImg.src = "./images/paper.png"
         return "PAPER";
         }
     else {
+        cpuChoiceImg.src = "./images/scissors.png"
         return "SCISSORS";
         }
 }
@@ -163,6 +186,7 @@ if (humanScore === 5) {
     winner.textContent = "You Won!";
     humanScore = 0;
     computerScore = 0;
+    
 }
 else if (computerScore === 5) {
     winner.textContent = "You Lost";
