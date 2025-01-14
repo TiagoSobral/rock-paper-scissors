@@ -1,6 +1,8 @@
 
 const body = document.querySelector("body");
 
+const gameTitle = document.createElement("h1");
+
 const groupedBtns = document.createElement("div");
 const rock = document.createElement("button");
 const paper = document.createElement("button");
@@ -21,12 +23,14 @@ const winner = document.createElement("div");
 const userChoiceImg = document.createElement("img");
 const cpuChoiceImg = document.createElement("img");
 
+gameTitle.classList.toggle("title");
 groupedBtns.classList.toggle("buttons");
 game.classList.toggle("game");
 groupedRounds.classList.toggle("round-message");
 score.classList.toggle("score");
 winner.classList.toggle("winner");
 
+gameTitle.textContent = "ROCK, PAPER, SCISSORS!";
 rockImg.src = "./images/rock.png";
 rockImg.textContent = "ROCK";
 paperImg.src = "./images/paper.png";
@@ -34,10 +38,11 @@ paperImg.textContent = "PAPER";
 scissorsImg.src = "./images/scissors.png";
 scissorsImg.textContent = "SCISSORS";
 
-body.appendChild(score);
+body.appendChild(gameTitle);
 body.appendChild(groupedRounds);
 body.appendChild(winner);
 body.appendChild(game);
+body.appendChild(score);
 score.appendChild(user);
 score.appendChild(cpu);
 
@@ -55,7 +60,6 @@ game.appendChild(cpuChoiceImg);
 
 groupedBtns.style.display = "flex";
 groupedBtns.style.justifyContent = "space-evenly";
-groupedBtns.style.backgroundColor = "gray";
 groupedBtns.style.padding = "20px"
 
 rockImg.style.width = "70px";
@@ -66,7 +70,6 @@ paper.style.borderRadius = "10px";
 
 scissorsImg.style.width = "70px";
 scissors.style.borderRadius = "10px";
-
 
 const btn = document.querySelectorAll("button");
 
@@ -132,6 +135,9 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 let roundNumber = 1;
+
+user.textContent = ` YOU: ${humanScore} `;
+cpu.textContent = ` CPU: ${computerScore} `;
 
 
 //GAME
