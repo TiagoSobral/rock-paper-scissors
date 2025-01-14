@@ -31,12 +31,15 @@ score.classList.toggle("score");
 winner.classList.toggle("winner");
 
 gameTitle.textContent = "ROCK, PAPER, SCISSORS!";
+groupedRounds.textContent = "LET'S PLAY! THE BEST OF 5 WINS";
 rockImg.src = "./images/rock.png";
 rockImg.textContent = "ROCK";
 paperImg.src = "./images/paper.png";
 paperImg.textContent = "PAPER";
 scissorsImg.src = "./images/scissors.png";
 scissorsImg.textContent = "SCISSORS";
+
+
 
 body.appendChild(gameTitle);
 body.appendChild(groupedRounds);
