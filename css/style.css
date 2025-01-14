@@ -8,7 +8,7 @@ body{
 }
 
 button{
-    background-color: #3B1C32;
+    background-color: #6A1E55;
     padding: 30px;
     border: auto;
     border-width: 2px;
@@ -53,7 +53,12 @@ button{
     padding: 20px;
     border-radius: 5px;
     border-style: double;
-    background-color: #6A1E55;
+    background-color: #3B1C32;
 
     
+}
+
+.round-message {
+    padding: 20px;
+    font-size: 20px;
 }
