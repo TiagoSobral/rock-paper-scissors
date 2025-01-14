@@ -43,9 +43,11 @@ button{
 
 .game > img {
     width: 70px;
+    height: 70px;
     padding: 20px;
     border-radius: 5px;
     border-style: double;
-    background-color: rgba(1, 1, 1, 0.606);
+    background-color: rgba(1, 1, 1, 0.286);
+
     
 }
