@@ -38,8 +38,9 @@ body.appendChild(score);
 body.appendChild(groupedRounds);
 body.appendChild(winner);
 body.appendChild(game);
-game.appendChild(user);
-game.appendChild(cpu);
+score.appendChild(user);
+score.appendChild(cpu);
+
 body.appendChild(groupedBtns);
 groupedBtns.appendChild(rock);
 groupedBtns.appendChild(paper);
@@ -49,8 +50,8 @@ rock.appendChild(rockImg);
 paper.appendChild(paperImg);
 scissors.appendChild(scissorsImg);
 
-score.appendChild(userChoiceImg);
-score.appendChild(cpuChoiceImg);
+game.appendChild(userChoiceImg);
+game.appendChild(cpuChoiceImg);
 
 groupedBtns.style.display = "flex";
 groupedBtns.style.justifyContent = "space-evenly";
@@ -65,9 +66,6 @@ paper.style.borderRadius = "10px";
 
 scissorsImg.style.width = "70px";
 scissors.style.borderRadius = "10px";
-
-userChoiceImg.style.width = "70px";
-cpuChoiceImg.style.width = "70px";
 
 
 const btn = document.querySelectorAll("button");
