@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(207, 207, 207);
+    background-color: #1A1A1D;
     display: flex;
     flex-direction: column;
     margin: -10px;
@@ -8,15 +8,20 @@ body{
 }
 
 button{
-    background-color: rgb(204, 229, 249);
-    padding: 10px;
+    background-color: #3B1C32;
+    padding: 30px;
     border: auto;
     border-width: 2px;
     border-style: solid;
 }
 
-.buttons {
-    
+.title {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin: 0;
+    background-color: #3B1C32;
+    color: #A64D79;
 }
 
 .game, .round-message, .score, .winner{
@@ -24,6 +29,7 @@ button{
     justify-content: center;
     margin: 20px;
     font-size: large;
+    color: #A64D79
 }
 
 .score {
@@ -47,7 +53,7 @@ button{
     padding: 20px;
     border-radius: 5px;
     border-style: double;
-    background-color: rgba(1, 1, 1, 0.286);
+    background-color: #6A1E55;
 
     
 }
