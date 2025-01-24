@@ -13,15 +13,15 @@ const paperImg = document.createElement("img");
 const scissorsImg = document.createElement("img");
 
 const game = document.createElement("div");
+const userChoiceImg = document.createElement("div");
+const cpuChoiceImg = document.createElement("div");
+
 const user = document.createElement("div");
 const cpu = document.createElement("div");
 
 const groupedRounds = document.createElement("div");
 const score = document.createElement("div");
 const winner = document.createElement("div");
-
-const userChoiceImg = document.createElement("img");
-const cpuChoiceImg = document.createElement("img");
 
 gameTitle.classList.toggle("title");
 groupedBtns.classList.toggle("buttons");
