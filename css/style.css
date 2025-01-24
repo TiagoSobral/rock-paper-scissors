@@ -62,3 +62,7 @@ button{
     padding: 20px;
     font-size: 20px;
 }
+
+.buttons {
+    padding: 50px;
+}

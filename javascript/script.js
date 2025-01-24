@@ -63,7 +63,7 @@ game.appendChild(cpuChoiceImg);
 
 groupedBtns.style.display = "flex";
 groupedBtns.style.justifyContent = "space-evenly";
-groupedBtns.style.padding = "20px"
+groupedBtns.style.padding = "40px"
 
 rockImg.style.width = "70px";
 rock.style.borderRadius = "10px";
@@ -137,7 +137,7 @@ function getHumanChoice() {
 //GLOBAL VARIABLES
 let humanScore = 0;
 let computerScore = 0;
-let roundNumber = 1;
+let roundNumber = 0;
 
 user.textContent = ` YOU: ${humanScore} `;
 cpu.textContent = ` CPU: ${computerScore} `;
@@ -189,16 +189,29 @@ cpu.textContent = ` CPU: ${computerScore} `;
 
 //score.textContent = `User ${humanScore} - ${computerScore} Computer`;
 
+
+// if (roundNumber > 5) {
+//     roundNumber = 0;
+//     humanScore = 0;
+//     computerScore = 0;
+//     cpuChoiceImg.remove;
+//     userChoiceImg.removeAttribute("src");
+// }
+
 if (humanScore === 5) {
     winner.textContent = "You Won!";
     humanScore = 0;
     computerScore = 0;
+    userChoiceImg.remove();
+    cpuChoiceImg.remove();
     
 }
 else if (computerScore === 5) {
     winner.textContent = "You Lost";
     humanScore = 0;
     computerScore = 0;
+    userChoiceImg.remove();
+    cpuChoiceImg.remove();
 }
 
 }
