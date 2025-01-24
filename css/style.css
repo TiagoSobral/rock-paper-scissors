@@ -47,7 +47,7 @@ button{
 
 }
 
-.game > img {
+.game > div {
     width: 70px;
     height: 70px;
     padding: 20px;
