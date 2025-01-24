@@ -58,6 +58,10 @@ button{
     
 }
 
+.game > div > img {
+    block-size: 70px;
+}
+
 .round-message {
     padding: 20px;
     font-size: 20px;
