@@ -14,7 +14,9 @@ const scissorsImg = document.createElement("img");
 
 const game = document.createElement("div");
 const userChoiceImg = document.createElement("div");
+const userImg = document.createElement("img");
 const cpuChoiceImg = document.createElement("div");
+const cpuImg = document.createElement("img");
 
 const user = document.createElement("div");
 const cpu = document.createElement("div");
@@ -39,8 +41,6 @@ paperImg.textContent = "PAPER";
 scissorsImg.src = "./images/scissors.png";
 scissorsImg.textContent = "SCISSORS";
 
-
-
 body.appendChild(gameTitle);
 body.appendChild(groupedRounds);
 body.appendChild(winner);
@@ -60,6 +60,8 @@ scissors.appendChild(scissorsImg);
 
 game.appendChild(userChoiceImg);
 game.appendChild(cpuChoiceImg);
+cpuChoiceImg.appendChild(cpuImg);
+userChoiceImg.appendChild(userImg);
 
 groupedBtns.style.display = "flex";
 groupedBtns.style.justifyContent = "space-evenly";
@@ -82,16 +84,15 @@ btn.forEach( (button) => {
         winner.textContent = "";
         btnAnswer = button.textContent;
 
-
         if (btnAnswer === "ROCK") {
-            userChoiceImg.src = "./images/rock.png"
+            userImg.src = "./images/rock.png"
             
         }
         else if (btnAnswer === "PAPER") {
-            userChoiceImg.src = "./images/paper.png"
+            userImg.src = "./images/paper.png"
         }
         else {
-            userChoiceImg.src = "./images/scissors.png"
+            userImg.src = "./images/scissors.png"
         }    
 
         playGame();
@@ -103,17 +104,18 @@ btn.forEach( (button) => {
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3)
     if (randomNum === 0) {
-        cpuChoiceImg.src = "./images/rock.png"
+        cpuImg.src = "./images/rock.png"
         return "ROCK";
         }
     else if (randomNum === 1) {
-        cpuChoiceImg.src = "./images/paper.png"
+        cpuImg.src = "./images/paper.png"
         return "PAPER";
         }
     else {
-        cpuChoiceImg.src = "./images/scissors.png"
+        cpuImg.src = "./images/scissors.png"
         return "SCISSORS";
         }
+    
 }
 
 function getHumanChoice() {
