@@ -33,6 +33,7 @@ game.classList.toggle("game");
 groupedRounds.classList.toggle("round-message");
 score.classList.toggle("score");
 winner.classList.toggle("winner");
+resetBtn.classList.toggle("play-again");
 
 gameTitle.textContent = "ROCK, PAPER, SCISSORS!";
 groupedRounds.textContent = "LET'S PLAY! THE BEST OF 5 WINS";
