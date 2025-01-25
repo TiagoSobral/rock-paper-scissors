@@ -25,6 +25,8 @@ const groupedRounds = document.createElement("div");
 const score = document.createElement("div");
 const winner = document.createElement("div");
 
+const resetBtn = document.createElement("button");
+
 gameTitle.classList.toggle("title");
 groupedBtns.classList.toggle("buttons");
 game.classList.toggle("game");
@@ -40,6 +42,8 @@ paperImg.src = "./images/paper.png";
 paperImg.textContent = "PAPER";
 scissorsImg.src = "./images/scissors.png";
 scissorsImg.textContent = "SCISSORS";
+
+resetBtn.textContent = "Play Again!";
 
 body.appendChild(gameTitle);
 body.appendChild(groupedRounds);
@@ -189,32 +193,24 @@ playRound(btnAnswer,getComputerChoice());
 user.textContent = ` YOU: ${humanScore} `;
 cpu.textContent = ` CPU: ${computerScore} `;
 
-//score.textContent = `User ${humanScore} - ${computerScore} Computer`;
-
-
-// if (roundNumber > 5) {
-//     roundNumber = 0;
-//     humanScore = 0;
-//     computerScore = 0;
-//     cpuChoiceImg.remove;
-//     userChoiceImg.removeAttribute("src");
-// }
-
 if (humanScore === 5) {
     winner.textContent = "You Won!";
-    humanScore = 0;
-    computerScore = 0;
-    userChoiceImg.remove();
-    cpuChoiceImg.remove();
-    
+    game.replaceChildren(resetBtn);
 }
 else if (computerScore === 5) {
     winner.textContent = "You Lost";
+    game.replaceChildren(resetBtn);
+}
+
+resetBtn.addEventListener("mousedown", () => {
     humanScore = 0;
     computerScore = 0;
-    userChoiceImg.remove();
-    cpuChoiceImg.remove();
-}
+    groupedRounds.textContent = "LET'S PLAY! THE BEST OF 5 WINS";
+    winner.textContent = "";
+    userImg.src = "";
+    cpuImg.src = "";
+    game.replaceChildren(userChoiceImg,cpuChoiceImg);
+})
 
 }
 
