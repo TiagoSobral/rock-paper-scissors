@@ -203,13 +203,15 @@ else if (computerScore === 5) {
 }
 
 resetBtn.addEventListener("mousedown", () => {
-    humanScore = 0;
-    computerScore = 0;
     groupedRounds.textContent = "LET'S PLAY! THE BEST OF 5 WINS";
     winner.textContent = "";
     userImg.src = "";
     cpuImg.src = "";
     game.replaceChildren(userChoiceImg,cpuChoiceImg);
+    humanScore = 0;
+    computerScore = 0;
+    user.textContent = ` YOU: ${humanScore} `;
+    cpu.textContent = ` CPU: ${computerScore} `;
 })
 
 }
