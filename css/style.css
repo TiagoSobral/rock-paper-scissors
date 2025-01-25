@@ -7,14 +7,6 @@ body{
 
 }
 
-button{
-    background-color: #6A1E55;
-    padding: 30px;
-    border: auto;
-    border-width: 2px;
-    border-style: solid;
-}
-
 .title {
     display: flex;
     justify-content: center;
@@ -30,6 +22,11 @@ button{
     margin: 20px;
     font-size: large;
     color: #A64D79
+}
+
+.round-message {
+    padding: 20px;
+    font-size: 20px;
 }
 
 .score {
@@ -62,11 +59,22 @@ button{
     block-size: 70px;
 }
 
-.round-message {
-    padding: 20px;
-    font-size: 20px;
+.game > .play-again{
+    border-radius: 5px;
+    font-size: large;
+}
+
+button{
+    background-color: #6A1E55;
+    padding: 30px;
+    border: auto;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .buttons {
     padding: 50px;
 }
+
+
+
