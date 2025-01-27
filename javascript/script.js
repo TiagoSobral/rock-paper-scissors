@@ -68,10 +68,6 @@ game.appendChild(cpuChoiceImg);
 cpuChoiceImg.appendChild(cpuImg);
 userChoiceImg.appendChild(userImg);
 
-groupedBtns.style.display = "flex";
-groupedBtns.style.justifyContent = "space-evenly";
-groupedBtns.style.padding = "40px"
-
 rockImg.style.width = "70px";
 rock.style.borderRadius = "10px";
 
