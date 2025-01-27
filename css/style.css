@@ -2,37 +2,38 @@ body{
     background-color: #1A1A1D;
     display: flex;
     flex-direction: column;
-    margin: -10px;
     font-family: Roboto, helvetica;
     flex-shrink: 1;
+    margin: -10px;
 }
 
 .title {
     display: flex;
     justify-content: center;
-    padding: 40px;
-    margin: 0;
     background-color: #3B1C32;
     color: #A64D79;
+    margin: 0;
+    padding: 40px;
+
 }
 
 .game, .round-message, .score, .winner{
     display: flex;
     justify-content: center;
-    margin: 20px;
-    font-size: large;
     color: #A64D79;
+    font-size: large;
+    margin: 20px;
     padding: 0 100px;
 }
 
 .round-message {
-    padding: 20px;
     font-size: 20px;
+    padding: 20px;
 }
 
 .score {
-    font-size: x-large;
     font: 900;
+    font-size: x-large;
     margin: 20px 0;
 }
 
@@ -48,15 +49,13 @@ body{
 }
 
 .game > div {
-    width: 70px;
-    height: 70px;
-    padding: 20px;
+    background-color: #3B1C32;
     border-radius: 5px;
     border-style: double;
-    background-color: #3B1C32;
+    width: 70px;
+    height: 70px;
     margin: 0 70px;
-
-    
+    padding: 20px;
 }
 
 .game > div > img {
@@ -70,17 +69,17 @@ body{
 
 button{
     background-color: #6A1E55;
-    padding: 30px;
     border: auto;
     border-width: 2px;
     border-style: solid;
-    margin: 0 20px
+    margin: 0 20px;
+    padding: 30px;
 }
 
 .buttons {
     display: flex;
-    padding: 50px;
     justify-content: center;
+    padding: 50px;
 }
 
 .score > div {
